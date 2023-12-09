@@ -1,0 +1,20 @@
+trainer:
+  max_epochs: 10
+model:
+  tasks: &tasks
+    - "White"
+    - "Black"
+    - "Asian"
+  criterion:
+    class_path: torch.nn.CrossEntropyLoss
+optimizer:
+  class_path: torch.optim.Adam
+  init_args:
+    lr: 1e-4
+data:
+  tasks: *tasks
+  train_df_path: "train_80.csv"
+  val_df_path: "valid_80.csv"
+  batch_size: 64
+  data_path: "../" # Path containing CheXpert-v1.0-small
+ckpt_path: null
