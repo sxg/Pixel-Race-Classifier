@@ -13,8 +13,8 @@ optimizer:
     lr: 1e-4
 data:
   tasks: *tasks
-  train_df_path: "train_80.csv"
-  val_df_path: "valid_80.csv"
+  train_df_path: "train_balanced.csv"
+  val_df_path: "valid_balanced.csv"
   batch_size: 64
   data_path: "../" # Path containing CheXpert-v1.0-small
 ckpt_path: null
