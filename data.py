@@ -74,8 +74,8 @@ class PixelDataModule(pl.LightningDataModule):
         )
 
     def _sort_values(tensor):
-        sorted_tensor, _ = tensor.sort()
-        return sorted_tensor
+        sorted_tensor, _ = tensor.view(3, 1, -1).sort()
+        return sorted_tensor.view(3, 320, 320)
 
     def _round_values(tensor):
         return torch.round(tensor / 0.05) * 0.05
